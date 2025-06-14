@@ -6,7 +6,12 @@ import { notFound } from "next/navigation";
 import { AccountChart } from "../_components/account-chart";
 
 export default async function AccountPage({ params }) {
-  const accountData = await getAccountWithTransactions(params.id);
+  // OPTION 1: Future-proof approach (recommended for consistency)
+  const resolvedParams = await params;
+  const accountData = await getAccountWithTransactions(resolvedParams.id);
+
+  // OPTION 2: Current approach (still works fine)
+  // const accountData = await getAccountWithTransactions(params.id);
 
   if (!accountData) {
     notFound();

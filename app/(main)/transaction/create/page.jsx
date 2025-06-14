@@ -5,7 +5,10 @@ import { getTransaction } from "@/actions/transaction";
 
 export default async function AddTransactionPage({ searchParams }) {
   const accounts = await getUserAccounts();
-  const editId = searchParams?.edit;
+  
+  // FIXED: Await searchParams before accessing its properties
+  const resolvedSearchParams = await searchParams;
+  const editId = resolvedSearchParams?.edit;
 
   let initialData = null;
   if (editId) {
