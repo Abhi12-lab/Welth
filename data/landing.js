@@ -104,7 +104,7 @@ export const testimonialsData = [
   {
     name: "Emily Rodriguez",
     role: "Financial Advisor",
-    image: "/75(1).jpg",
+    image: "/76.jpg",
     quote:
       "I recommend Welth to all my clients. The multi-currency support and detailed analytics make it perfect for international investors.",
   },
